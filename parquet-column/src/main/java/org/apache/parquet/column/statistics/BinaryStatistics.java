@@ -125,8 +125,8 @@ public class BinaryStatistics extends Statistics<Binary> {
    */
   @Deprecated
   public void updateStats(Binary min_value, Binary max_value) {
-    if (comparator().compare(min, min_value) > 0) { min = min_value.copy(); }
-    if (comparator().compare(max, max_value) < 0) { max = max_value.copy(); }
+    if (comparator().compare(min, min_value) > 0) { min = min_value.copyToArray(); }
+    if (comparator().compare(max, max_value) < 0) { max = max_value.copyToArray(); }
   }
 
   /**
@@ -136,8 +136,8 @@ public class BinaryStatistics extends Statistics<Binary> {
    */
   @Deprecated
   public void initializeStats(Binary min_value, Binary max_value) {
-      min = min_value.copy();
-      max = max_value.copy();
+      min = min_value.copyToArray();
+      max = max_value.copyToArray();
       this.markAsNotEmpty();
   }
 

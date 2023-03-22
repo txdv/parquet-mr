@@ -105,8 +105,8 @@ class BinaryColumnIndexBuilder extends ColumnIndexBuilder {
 
   @Override
   void addMinMax(Object min, Object max) {
-    minValues.add(min == null ? null : truncator.truncateMin((Binary) min, truncateLength));
-    maxValues.add(max == null ? null : truncator.truncateMax((Binary) max, truncateLength));
+    minValues.add(min == null ? null : truncator.truncateMin((Binary) min, truncateLength).copyToArray());
+    maxValues.add(max == null ? null : truncator.truncateMax((Binary) max, truncateLength).copyToArray());
   }
 
   @Override

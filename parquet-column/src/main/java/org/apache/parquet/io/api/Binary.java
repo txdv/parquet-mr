@@ -114,6 +114,10 @@ abstract public class Binary implements Comparable<Binary>, Serializable {
     }
   }
 
+  public Binary copyToArray() {
+    return Binary.fromConstantByteArray(getBytes());
+  }
+
   /**
    * Signals if backing bytes are owned, and can be modified, by producer of the Binary
    * @return if backing bytes are held on by producer of the Binary
